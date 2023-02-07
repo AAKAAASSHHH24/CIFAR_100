@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s: ')
 
-package_name = "CIFAR-100 CLASSIFIER"
+package_name = "CIFAR-100CLASSIFIER"
 
 list_of_files = [
    ".github/workflows/.gitkeep",
@@ -16,8 +16,8 @@ list_of_files = [
    f"src/{package_name}/entity/__init__.py", 
    f"src/{package_name}/constants/__init__.py",
    "tests/__init__.py",
-   "tests/unit/__init__.py",
-   "tests/integration/__init__.py",
+   "tests/unit/__init__.py",                  #used for testing class or a function
+   "tests/integration/__init__.py",           #used for testing pipelines or merging of components
    "configs/config.yaml",
    "dvc.yaml",
    "params.yaml",
