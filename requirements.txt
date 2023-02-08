@@ -4,6 +4,7 @@ pandas
 notebook
 numpy
 matplotlib
+pathlib
 seaborn
 python-box==6.0.2
 pyYAML
