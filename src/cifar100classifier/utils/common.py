@@ -21,7 +21,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:   #access values in dictionary l
         e: empty file
 
     Returns:
-        ConfigBox: ConfigBox type
+        ConfigBox: ConfigBox type i.e use the dictionaary values as attributes
     """
     try:
         with open(path_to_yaml) as yaml_file:
