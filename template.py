@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s: ')
 
-package_name = "CIFAR-100CLASSIFIER"
+package_name = "cifar100classifier"
 
 list_of_files = [
    ".github/workflows/.gitkeep",

@@ -1,4 +1,5 @@
 tensorflow
+setuptools
 dvc
 pandas
 notebook

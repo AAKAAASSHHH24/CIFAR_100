@@ -3,11 +3,11 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-__version__ = "0.0.0"
+__version__ = "1.0.0"
 
 REPO_NAME = "CIFAR_100"
 AUTHOR_USER_NAME = "AAKAAASSHHH24"
-SRC_REPO = "CIFAR-100CLASSIFIER"
+SRC_REPO = "cifar100classifier"
 AUTHOR_EMAIL = "akashrksht@gmail.com"
 
 setuptools.setup(
