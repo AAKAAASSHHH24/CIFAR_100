@@ -20,4 +20,5 @@ opencv-python
 albumentations
 efficientnet
 mlflow==1.26.1
+pytest
 -e .
