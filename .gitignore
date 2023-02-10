@@ -130,7 +130,7 @@ dmypy.json
 
 #custom
 *.tar.gz
-.artifacts\data_ingestion
+artifacts/data_ingestion
 artifacts/data_ingestion/cifar-100-python/meta
 artifacts/data_ingestion/cifar-100-python/test
 artifacts/data_ingestion/cifar-100-python/train
