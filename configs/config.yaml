@@ -1,0 +1,8 @@
+artifacts_root: artifacts
+
+data_ingestion:
+ root_dir: artifacts/data_ingestion
+ source_URL: https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
+ local_data_file: artifacts/data_ingestion/data.tar.gz
+ unzip_dir: artifacts/data_ingestion
+

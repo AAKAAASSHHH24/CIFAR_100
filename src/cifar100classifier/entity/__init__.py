@@ -1,0 +1,1 @@
+from cifar100classifier.entity.config_entity import DataIngestionConfig
