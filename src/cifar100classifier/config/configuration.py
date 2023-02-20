@@ -1,4 +1,4 @@
-from cifar100classifier.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
+from cifar100classifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from cifar100classifier.entity import DataIngestionConfig
 from cifar100classifier.utils import read_yaml, create_directories
 
