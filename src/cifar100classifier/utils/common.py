@@ -119,3 +119,10 @@ def get_size(path: Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
+
+@ensure_annotations
+def unpickle(file: Path) -> dict:
+    import pickle
+    with open(file, 'rb') as fo:
+        dict = pickle.load(fo, encoding='latin1')
+    return dict
