@@ -8,3 +8,11 @@ class DataIngestionConfig:
     local_data_file: Path
     unzip_dir: Path
     
+@dataclass(frozen=True)
+class DataGenerationConfig:
+    root_dir: Path
+    train_file: Path
+    test_file: Path
+    meta_file: Path
+    
+    
