@@ -1,8 +1,9 @@
-AUGMENTATION: True
-IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
-BATCH_SIZE: 8
-INCLUDE_TOP: False
-EPOCHS: 1
-CLASSES: 2
-WEIGHTS: imagenet
-LEARNING_RATE: 0.01
+height: 456
+width: 456
+channels: 3
+
+n_classes: 100
+input_shape: (height, width, channels)
+
+epochs: 2
+batch_size: 8
