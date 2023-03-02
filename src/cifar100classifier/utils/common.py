@@ -8,6 +8,11 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+from datetime import datetime
+
+
+def get_current_time_stamp() -> str:
+    return f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}"
 
 
 @ensure_annotations # IT MAKES SURE THAT CORRECT FORM OF VALUE IS PASSED AS ARGUMENTS to ensure certain type of returns
