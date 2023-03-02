@@ -1,9 +1,11 @@
 height: 456
 width: 456
 channels: 3
-
 n_classes: 100
 input_shape: (height, width, channels)
-
+dim: (height, width)
 epochs: 2
 batch_size: 8
+labels: None
+mode: 'fit'
+shuffle: True

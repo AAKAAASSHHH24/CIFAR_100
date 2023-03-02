@@ -7,15 +7,21 @@ data_ingestion:
   unzip_dir: artifacts/data_ingestion
 
 data_generation:
-  root_dir: artifacts/data_ingestion/cifar-100-python
+  base_dir: artifacts
+  root_dir: artifacts/transformed_data
   train_file: artifacts/data_ingestion/cifar-100-python/train
   test_file: artifacts/data_ingestion/cifar-100-python/test
   meta_file: artifacts/data_ingestion/cifar-100-python/meta
+  transformed_data_path: artifacts/transformed_data/train_val_data
+  metadata_path: artifacts/transformed_data/metadata
 
-prepare_base_model:
-  root_dir: artifacts/prepare_base_model
-  base_model_path: artifacts/prepare_base_model/base_model.h5
-  updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5
+generator:
+  root_dir: artifacts/transformed_data
+  transformed_data_path: artifacts/transformed_data/train_val_data
+  metadata_path: artifacts/transformed_data/metadata
+  train_file: artifacts/data_ingestion/cifar-100-python/train
+  test_file: artifacts/data_ingestion/cifar-100-python/test
+  meta_file: artifacts/data_ingestion/cifar-100-python/meta
 
 
 
