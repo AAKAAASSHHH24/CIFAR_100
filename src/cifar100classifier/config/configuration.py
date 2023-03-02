@@ -1,7 +1,8 @@
 from cifar100classifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from cifar100classifier.entity import DataIngestionConfig, DataGenerationConfig
+from cifar100classifier.entity import DataIngestionConfig, DataGenerationConfig,GeneratorConfig
 from cifar100classifier.utils import read_yaml, create_directories
 
+from pathlib import Path
 
 
 #CONFIGURATION MANAGER DEFINED
@@ -11,10 +12,12 @@ class ConfigurationManager:
         self, 
         config_filepath = CONFIG_FILE_PATH,
         params_filepath = PARAMS_FILE_PATH):
+        
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
+        
         create_directories([self.config.artifacts_root])
-
+        
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
         
@@ -28,17 +31,45 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
-    
+        
     def get_data_generation_config(self) -> DataGenerationConfig:
         config = self.config.data_generation
         
-        create_directories([config.root_dir])
+        create_directories([Path(config.root_dir), 
+                            Path(config.transformed_data_path), 
+                            Path(config.metadata_path)])
 
         data_generation_config = DataGenerationConfig(
+            base_dir= config.base_dir,
             root_dir=config.root_dir,
             train_file=config.train_file,
             test_file=config.test_file,
-            meta_file=config.meta_file 
+            meta_file=config.meta_file,
+            transformed_data_path= config.transformed_data_path,
+            metadata_path= config.metadata_path
         )
 
         return data_generation_config
+
+    def get_generator_config(self) -> GeneratorConfig:
+        config = self.config.generator
+        
+        create_directories([config.root_dir])
+
+        generator_config = GeneratorConfig(
+            root_dir=Path(config.root_dir),
+            transformed_data_path= config.transformed_data_path,
+            metadata_path= config.metadata_path,
+            mode= self.params.mode,
+            height=self.params.height,
+            width=self.params.width,
+            channels=self.params.channels,
+            n_classes=self.params.n_classes,
+            input_shape=self.params.input_shape,
+            dim=self.params.dim,
+            epochs=self.params.epochs,
+            batch_size=self.params.batch_size,
+            shuffle= self.params.shuffle
+        )
+
+        return generator_config

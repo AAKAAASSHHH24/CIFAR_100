@@ -1,1 +1,1 @@
-from cifar100classifier.entity.config_entity import DataIngestionConfig,DataGenerationConfig
+from cifar100classifier.entity.config_entity import DataIngestionConfig, DataGenerationConfig, GeneratorConfig
