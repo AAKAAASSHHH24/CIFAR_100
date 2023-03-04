@@ -2,10 +2,13 @@ height: 456
 width: 456
 channels: 3
 n_classes: 100
-input_shape: (height, width, channels)
-dim: (height, width)
+input_shape: [456, 456, 3]
+dim: [456, 456]
 epochs: 2
 batch_size: 8
 labels: None
 mode: 'fit'
 shuffle: True
+weights: 'imagenet'
+include_top: False
+learning_rate: 0.0001
