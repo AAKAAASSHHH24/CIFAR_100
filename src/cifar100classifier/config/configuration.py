@@ -1,5 +1,5 @@
 from cifar100classifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
-from cifar100classifier.entity import DataIngestionConfig, DataGenerationConfig,GeneratorConfig
+from cifar100classifier.entity import DataIngestionConfig, DataGenerationConfig, GeneratorConfig, PrepareBaseModelConfig
 from cifar100classifier.utils import read_yaml, create_directories
 
 from pathlib import Path
@@ -73,3 +73,21 @@ class ConfigurationManager:
         )
 
         return generator_config
+    
+    def get_base_model_config(self) -> PrepareBaseModelConfig:
+        config = self.config.prepare_base_model
+    
+        create_directories([config.root_dir])
+
+        prepare_base_model_config = PrepareBaseModelConfig(
+            root_dir=Path(config.root_dir),
+            base_model_path=Path(config.base_model_path),
+            updated_base_model_path=Path(config.updated_base_model_path),
+            params_image_size=self.params.input_shape,
+            params_learning_rate=self.params.learning_rate,
+            params_include_top=self.params.include_top,
+            params_weights=self.params.weights,
+            n_classes=self.params.n_classes
+        )
+
+        return prepare_base_model_config
