@@ -135,3 +135,4 @@ artifacts/data_ingestion/cifar-100-python/meta
 artifacts/data_ingestion/cifar-100-python/test
 artifacts/data_ingestion/cifar-100-python/train
 artifacts/transformed_data
+artifacts/prepare_base_model
