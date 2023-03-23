@@ -11,7 +11,7 @@ from cifar100classifier.constants import *
 from cifar100classifier.utils import read_yaml, create_directories, unpickle, get_current_time_stamp
 from cifar100classifier.entity import DataGenerationConfig, GeneratorConfig
 from cifar100classifier import logger
-   
+  
 class DataGenerator:
    def __init__(self, config: DataGenerationConfig, params_filepath = PARAMS_FILE_PATH ):
       self.config = config

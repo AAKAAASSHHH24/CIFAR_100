@@ -2,8 +2,8 @@ height: 456
 width: 456
 channels: 3
 n_classes: 100
-input_shape: [456, 456, 3]
-dim: [456, 456]
+input_shape: [456,456,3]
+dim: [456,456]
 epochs: 2
 batch_size: 8
 labels: None
